@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-distro/
+dist/
 public/
 plugins/**
 !docs/plugins/**
