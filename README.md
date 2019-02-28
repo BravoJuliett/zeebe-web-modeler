@@ -16,20 +16,20 @@ To install all project dependencies execute
 ```
 npm install
 ```
-
+<br>
 Build the application (including [bpmn-js](https://github.com/bpmn-io/bpmn-js)) via
-This builds the zeebe-modeler.js library that can be included in other web-applications
 
 ```
 npm run all
 ```
 
-You may also spawn a development setup by executing
-This task generates the distribution ready client-side modeler application into the `public` folder.
+This builds the zeebe-modeler.js library that can be included in other web-applications<br><br>
 
+You may also spawn a development setup by executing
 ```
 npm run dev
 ```
+This task generates the distribution ready client-side modeler application into the `public` folder.
 
 ## Sync with zeebe
 
