@@ -4,8 +4,8 @@
   "description": "A simple web-modeler with zeebe extensions",
   "scripts": {
     "all": "run-s lint build",
-    "build": "webpack --mode production",
-    "dev": "webpack-dev-server --content-base=public --open",
+    "build": "webpack --config webpack/prod.webpack.config.js --mode production",
+    "dev": "webpack-dev-server --config webpack/dev.webpack.config.js --content-base=public --open",
     "lint": "eslint .",
     "start": "run-s dev"
   },

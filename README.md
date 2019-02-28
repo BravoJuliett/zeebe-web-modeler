@@ -18,20 +18,18 @@ npm install
 ```
 
 Build the application (including [bpmn-js](https://github.com/bpmn-io/bpmn-js)) via
+This builds the zeebe-modeler.js library that can be included in other web-applications
 
 ```
 npm run all
 ```
 
 You may also spawn a development setup by executing
+This task generates the distribution ready client-side modeler application into the `public` folder.
 
 ```
 npm run dev
 ```
-
-Both tasks generate the distribution ready client-side modeler application into the `public` folder.
-
-Serve the application locally or via a web server (nginx, apache, embedded).
 
 ## Sync with zeebe
 
