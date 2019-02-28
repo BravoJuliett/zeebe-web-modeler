@@ -1,34 +1,37 @@
-'use strict';
+import Modeler from 'bpmn-js/lib/Modeler';
+import propertiesPanelModule from 'bpmn-js-properties-panel';
+import propertiesProviderModule from './custom/properties-provider';
+import camundaModdleDescriptor from './custom/zeebe-bpmn-moddle/zeebe';
+import CustomModule from './custom';
+import CustomModelingModule from './custom/modeling';
 
-var Modeler = require('bpmn-js/lib/Modeler');
+export default class CustomModeler extends Modeler {
 
-var assign = require('lodash/object/assign'),
-    isArray = require('lodash/lang/isArray');
+  constructor(options) {
 
-var inherits = require('inherits');
+    var modelerOptions = {
+      container: options.container,
+      keyboard: { bindTo: document },
+      propertiesPanel: {
+        parent: options.propertiesPanel
+      },
+      moddleExtensions: {
+        camunda: camundaModdleDescriptor
+      }
+    };
+    super(modelerOptions);
+  }
 
-
-function CustomModeler(options) {
-  Modeler.call(this, options);
-
-  this._customElements = [];
+  resetZoom(callback) {
+    var self = this;
+    self.get('zoomScroll').reset();
+  }
 }
 
-inherits(CustomModeler, Modeler);
-
-CustomModeler.prototype._modules = [].concat(
-  CustomModeler.prototype._modules,
-  [
-    require('./custom')
-  ]
-);
-
-CustomModeler.prototype.resetZoom = function (callback) {
-    var self = this;
-
-    self.get('zoomScroll').reset();
-};
-
-
-module.exports = CustomModeler;
-
+CustomModeler.prototype._modules = [
+  ...CustomModeler.prototype._modules,
+  CustomModule,
+  propertiesPanelModule,
+  propertiesProviderModule,
+  CustomModelingModule
+];

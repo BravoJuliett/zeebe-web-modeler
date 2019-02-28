@@ -1,23 +1,24 @@
 {
-  "name": "bpmnjs-custom-modeler",
-  "version": "0.0.1",
-  "description": "An example on how to create a custom modeler with bpmn-js",
-  "main": "app/app.js",
+  "name": "zeebe-web-modeler",
+  "version": "0.0.0",
+  "description": "A simple web-modeler with zeebe extensions",
+  "scripts": {
+    "all": "run-s lint build",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --content-base=public --open",
+    "lint": "eslint .",
+    "start": "run-s dev"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bpmn-io/bpmn-js-examples"
-  },
-  "scripts": {
-    "test": "grunt test",
-    "dev": "grunt auto-build",
-    "all": "grunt"
   },
   "keywords": [
     "bpmnjs-example"
   ],
   "author": {
-    "name": "Felix Müller",
-    "url": "https://github.com/"
+    "name": "Dominik Horn",
+    "url": "https://github.com/dominikhrn"
   },
   "contributors": [
     {
@@ -27,42 +28,24 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^13.0.0",
-    "chai": "^3.2.0",
-    "grunt": "~0.4.4",
-    "grunt-browserify": "^4.0.0",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-connect": "~0.11.2",
-    "grunt-contrib-copy": "~0.8.1",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-less": "^1.0.1",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-karma": "^1.0.0",
-    "karma": "^0.13.0",
-    "karma-browserify": "^5.0.1",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^0.1.2",
-    "karma-firefox-launcher": "^0.1.3",
-    "karma-ie-launcher": "^0.1.4",
-    "karma-mocha": "^0.2.0",
-    "karma-phantomjs-launcher": "^0.1.2",
-    "karma-safari-launcher": "^0.1.1",
-    "karma-spec-reporter": "0.0.26",
-    "load-grunt-tasks": "~3.2.0",
-    "mocha": "^2.2.5",
-    "mocha-test-container-support": "^0.2.0",
-    "stringify": "^3.1.0",
-    "time-grunt": "^0.3.2",
-    "watchify": "^3.7.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "eslint": "^5.0.1",
+    "eslint-plugin-bpmn-io": "^0.5.3",
+    "npm-run-all": "^4.1.3",
+    "raw-loader": "^0.5.1",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "bpmn-js": "^0.17.3",
-    "bpmn-js-properties-panel": "^0.10.0",
-    "camunda-bpmn-moddle": "^0.8.1",
-    "diagram-js": "^0.17.0",
-    "font-awesome": "^4.7.0",
-    "inherits": "^2.0.3",
-    "jquery": "3.1.1",
-    "lodash": "^3.10.1"
+    "bpmn-js": "^3.1.0",
+    "bpmn-js-properties-panel": "^0.29.0",
+    "diagram-js": "^3.0.1",
+    "jquery": "^3.3.1"
   }
 }
